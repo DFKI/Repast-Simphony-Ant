@@ -75,7 +75,8 @@ Go to `http://localhost:5000`
   ![import](docs/import.png)
 - Select the `build.xml` file in the project root and set it as `Ant Build File` from the context menu
 - Open the `Ant View` and edit the properties of the `build` Ant Target
-- Add the `ECLIPSE_HOME` property with the path to the `plugins` folder as value
+- Add the `plugins_loc` property with the path to the `plugins` folder as value
+- Add the `model_loc` property with the value `./JZombies_Demo.rs`
   ![ant-properties](docs/ant-properties.png)
 - 🔨 Build the Model by executing the `build` Ant Target
 - 🚀 Run the Model by executing one of the `run-*` Ant Targets
