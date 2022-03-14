@@ -1,7 +1,9 @@
 # Run Model (almost) w/o Eclipse
 
 This project uses the Repast Simphony JZombies Model, taken from the [Repast Java Tutorials](https://repast.github.io/docs/RepastJavaGettingStarted.pdf) and shows how to use Repast Simphony (almost) without Eclipse.
-This is especially useful, when the model is built in a `ci` pipeline or one wants to use another IDE, like Intellij IDEA. The approach is widely used by the
+This is especially useful, when the model is built in a `ci` pipeline or one wants to use another IDE, like Intellij IDEA. 
+
+The approach is developed and widely used by the team of the topic field [Cognitive Social Simulation](https://www.dfki.de/en/web/research/research-departments/smart-data-knowledge-services/tf-cognitive-social-simulation) of the Research Department Smart Data & Knowledge Services at DFKI.
 
 ## Requirements
 
