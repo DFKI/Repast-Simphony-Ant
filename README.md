@@ -91,7 +91,7 @@ Example for `run-model`:
 
 ### Syntax Highlighting in Intellij
 
-Under `File > Project Structure > Project Settings > Modules > SoSAD Draft > Dependencies`
+Under `File > Project Structure > Project Settings > Modules > JZombies_Demo > Dependencies`
 
 - Add the `lib` folder in the project root
 - Add the `repast.simphony.bin_and_src.jar` from the `plugins`
