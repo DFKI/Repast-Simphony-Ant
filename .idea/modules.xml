@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/JZombies_Demo.iml" filepath="$PROJECT_DIR$/JZombies_Demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/repast-simphony-ant.iml" filepath="$PROJECT_DIR$/repast-simphony-ant.iml" />
     </modules>
   </component>
 </project>

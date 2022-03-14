@@ -16,5 +16,25 @@
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="inheritedJdk" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar:///Applications/Repast Simphony 2.9.0/Eclipse.app/Contents/Eclipse/plugins/repast.simphony.bin_and_src_2.9.0/repast.simphony.bin_and_src.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar:///Applications/Repast Simphony 2.9.0/Eclipse.app/Contents/Eclipse/plugins/repast.simphony.bin_and_src_2.9.0/repast.simphony.bin_and_src.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
