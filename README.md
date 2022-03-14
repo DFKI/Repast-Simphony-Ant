@@ -1,7 +1,7 @@
 # Run Model (almost) w/o Eclipse
 
 This project uses the Repast Simphony JZombies Model, taken from the [Repast Java Tutorials](https://repast.github.io/docs/RepastJavaGettingStarted.pdf) and shows how to use Repast Simphony (almost) without Eclipse.
-This is especially useful, when the model is built in a `ci` pipeline or one wants to use another IDE, like Intellij IDEA.
+This is especially useful, when the model is built in a `ci` pipeline or one wants to use another IDE, like Intellij IDEA. The approach is widely used by the
 
 ## Requirements
 
@@ -13,7 +13,7 @@ installation of Repast Simphony 2.9 .
 
 - Note the path to the `plugins` folder. For Eclipse under macOS the path can look like  
   `/Applications/Repast Simphony 2.9.0/Eclipse.app/Contents/Eclipse/`
-- The path has to be build with forward-slashes (`/`),  on Windows too
+- The path has to be build with forward-slashes (`/`), on Windows too
 
 ## Run from Command Line
 
@@ -32,6 +32,7 @@ installation of Repast Simphony 2.9 .
   ```
 
 ### Available Targets
+
 - Headless Batch Run as described in https://repast.github.io/docs/RepastBatchRunsGettingStarted.pdf
   ```shell
   ant run-batch "-Dplugins_loc=[/absolute/path/to/plugins]"  "-Dmodel_loc=[relative/path/to/model.rs]" "-Dargs=-hl -r -model_dir [/absolute/path/to/project/root] -b batch/batch_params.xml -o output -c batch_config.properties"
@@ -54,7 +55,9 @@ installation of Repast Simphony 2.9 .
   ```
 
 ## Run the Repast Server as Docker Container
+
 Reference to Repast Server: https://repast.github.io/docs/RepastNG/browser.html
+
 ```
 docker-compose up -d --build
 ```
