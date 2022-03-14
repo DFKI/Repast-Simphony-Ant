@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!--
+Set the plugins_loc property to the Path of the Eclipse folder with the plugins. Example:
+ant run-model "-Dplugins_loc=/Applications/Repast Simphony 2.9.0/Eclipse.app/Contents/Eclipse/" "-Dmodel_loc=./JZombies_Demo.rs"
+-->
+
+    <project basedir="." default="build" name="Repast Simphony">
+    <property environment="env"/>
+    <property name="workspace_loc" value="."/>
+    <property name="file_prompt:the Installer Output File Name:setup.jar" value="${file_prompt:the Installer Output File Name:setup.jar}"/>
+    <property name="REPAST_VERSION" value="2.9.0"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="11"/>
+    <property name="source" value="11"/>
+    <path id="Groovy DSL Support.libraryclasspath">
+        <pathelement location="${plugins_loc}plugins/org.codehaus.groovy_3.0.9.v202109301428-e2106-RELEASE/plugin_dsld_support/"/>
+    </path>
+    <path id="Groovy Libraries.libraryclasspath">
+        <pathelement location="${plugins_loc}plugins/org.codehaus.groovy_3.0.9.v202109301428-e2106-RELEASE/lib/groovy-3.0.9-indy.jar"/>
+        <pathelement location="${plugins_loc}plugins/org.codehaus.groovy_3.0.9.v202109301428-e2106-RELEASE/lib/groovy-test-3.0.9-indy.jar"/>
+        <pathelement location="${plugins_loc}plugins/org.codehaus.groovy_3.0.9.v202109301428-e2106-RELEASE/lib/ivy-2.5.0.jar"/>
+    </path>
+    <path id="Repast Simphony Development Libraries.libraryclasspath">
+        <pathelement location="${plugins_loc}plugins/libs.bsf_2.9.0/lib/bsf.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.bsf_2.9.0/lib/bsh-2.0b4.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/batik-anim-1.8.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/batik-awt-util-1.8.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/batik-bridge-1.8.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/batik-codec-1.8.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/batik-css-1.8.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/batik-dom-1.8.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/batik-ext-1.8.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/batik-extension-1.8.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/batik-gui-util-1.8.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/batik-gvt-1.8.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/batik-parser-1.8.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/batik-script-1.8.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/batik-svg-dom-1.8.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/batik-svggen-1.8.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/batik-swing-1.8.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/batik-transcoder-1.8.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/batik-util-1.8.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/batik-xml-1.8.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/clibwrapper_jiio.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/gluegen-rt-natives-linux-amd64.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/gluegen-rt-natives-linux-i586.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/gluegen-rt-natives-macosx-universal.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/gluegen-rt-natives-windows-amd64.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/gluegen-rt-natives-windows-i586.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/gluegen-rt.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/j3dcore.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/j3dutils.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/jai_codec.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/jai_core.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/jai_imageio.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/jogl-all-natives-linux-amd64.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/jogl-all-natives-linux-i586.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/jogl-all-natives-macosx-universal.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/jogl-all-natives-windows-amd64.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/jogl-all-natives-windows-i586.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/jogl-all.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/mlibwrapper_jai.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/vecmath.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/xml-apis-1.3.04.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/xml-apis-ext-1.3.04.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.ext_2.9.0/lib/xmlgraphics-commons-2.0.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.piccolo_2.9.0/lib/piccolo2d-core-3.0.jar"/>
+        <pathelement location="${plugins_loc}plugins/libs.piccolo_2.9.0/lib/piccolo2d-extras-3.0.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.batch_2.9.0/lib/batch_groovy.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.bin_and_src_2.9.0/repast.simphony.bin_and_src.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.chart_2.9.0/lib/jcommon-1.0.23.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.chart_2.9.0/lib/jfreechart-1.0.19.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.core_2.9.0/lib/cglib-nodep-2.2.3.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.core_2.9.0/lib/collections-generic-4.01.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.core_2.9.0/lib/colt-1.2.0-no_hep.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.core_2.9.0/lib/commons-collections-3.2.2.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.core_2.9.0/lib/commons-io-2.5.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.core_2.9.0/lib/commons-lang3-3.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.core_2.9.0/lib/commons-math3-3.6.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.core_2.9.0/lib/concurrent-1.3.4.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.core_2.9.0/lib/dom4j-1.6.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.core_2.9.0/lib/hsqldb-2.3.2.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.core_2.9.0/lib/jbullet.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.core_2.9.0/lib/jscience-4.3.1-no_ogis.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.core_2.9.0/lib/jung-algorithms-2.0.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.core_2.9.0/lib/jung-api-2.0.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.core_2.9.0/lib/jung-graph-impl-2.0.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.core_2.9.0/lib/jung-io-2.0.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.core_2.9.0/lib/ooxml-schemas-1.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.core_2.9.0/lib/opencsv-2.3.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.core_2.9.0/lib/poi-3.9-20121203.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.core_2.9.0/lib/poi-ooxml-3.9-20121203.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.core_2.9.0/lib/stack-alloc.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.core_2.9.0/lib/velocity-1.4.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.core_2.9.0/lib/xmlbeans-2.3.0.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.distributed.batch_2.9.0/bin/fake_jar_to_avoid_watcher_init_warnings.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.distributed.batch_2.9.0/lib/ant-launcher.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.distributed.batch_2.9.0/lib/ant.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.distributed.batch_2.9.0/lib/jsch-0.1.48.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.distributed.batch_2.9.0/resources/fake_jar_to_avoid_watcher_init_warnings.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis.visualization_2.9.0/lib/gt-render-19.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis.visualization_2.9.0/lib/worldwind-2.2.0.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/GeographicLib-Java-1.44.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/ejml-core-0.34.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/ejml-ddense-0.34.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/gt-api-19.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/gt-arcgrid-19.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/gt-brewer-19.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/gt-coverage-19.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/gt-cql-19.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/gt-data-19.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/gt-epsg-hsql-19.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/gt-geotiff-19.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/gt-image-19.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/gt-main-19.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/gt-metadata-19.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/gt-opengis-19.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/gt-referencing-19.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/gt-shapefile-19.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/imageio-ext-arcgrid-1.1.20.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/imageio-ext-geocore-1.1.20.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/imageio-ext-streams-1.1.20.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/imageio-ext-tiff-1.1.20.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/imageio-ext-utilities-1.1.20.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jdom2-2.0.6.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-algebra-1.0.22.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-bandcombine-1.0.22.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-bandmerge-1.0.22.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-bandselect-1.0.22.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-binarize-1.0.22.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-border-1.0.22.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-buffer-1.0.22.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-classifier-1.0.22.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-colorconvert-1.0.22.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-colorindexer-1.0.22.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-contour-1.4.0.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-crop-1.0.22.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-errordiffusion-1.0.22.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-format-1.0.22.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-imagefunction-1.0.22.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-iterators-1.0.22.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-lookup-1.0.22.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-mosaic-1.0.22.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-nullop-1.0.22.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-orderdither-1.0.22.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-piecewise-1.0.22.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-rangelookup-1.4.0.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-rescale-1.0.22.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-rlookup-1.0.22.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-scale-1.0.22.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-stats-1.0.22.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-translate-1.0.22.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-utilities-1.0.22.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-utils-1.4.0.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-vectorbin-1.0.22.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-vectorbinarize-1.4.0.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-vectorize-1.4.0.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-warp-1.0.22.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-zonal-1.0.22.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jt-zonalstats-1.4.0.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gis_2.9.0/lib/jts-core-1.14.0.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.groovy_2.9.0/lib/groovy-swing-3.0.8.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.groovy_2.9.0/lib/groovy-templates-3.0.8.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.groovy_2.9.0/lib/groovy-xml-3.0.8.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gui_2.9.0/lib/jgoodies-binding-2.9.0.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gui_2.9.0/lib/jgoodies-common-1.6.0.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gui_2.9.0/lib/jide-oss-3.7.4.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gui_2.9.0/lib/jmf.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.gui_2.9.0/lib/spark-1.2.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.integration_2.9.0/lib/commons-exec-1.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.integration_2.9.0/lib/commons-jxpath-1.3.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.integration_2.9.0/lib/jaxen-1.1.6.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.integration_2.9.0/lib/jdom-1.1.3.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.jasperreports_2.9.0/lib/commons-beanutils-1.8.0.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.jasperreports_2.9.0/lib/commons-digester-2.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.jasperreports_2.9.0/lib/iText-2.1.7.js2.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.jasperreports_2.9.0/lib/jasperreports-5.1.0.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.jdbcfreezedryer_2.9.0/lib/commons-dbcp-1.4.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.jdbcfreezedryer_2.9.0/lib/commons-pool-1.6.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.relogo.builder_2.9.0/lib/ST-4.0.7.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.relogo.ide_2.9.0/libs/antlrworks-1.1.7.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.relogo.runtime_2.9.0/dsldFolder/ReLogoDSLD.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.relogo.runtime_2.9.0/lib/asm-3.2.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.runtime_2.9.0/lib/commons-cli-1.3.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.runtime_2.9.0/lib/commons-logging-1.1.2.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.runtime_2.9.0/lib/javassist-3.17.1-GA.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.runtime_2.9.0/lib/jpf-boot.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.runtime_2.9.0/lib/jpf.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.runtime_2.9.0/lib/log4j-1.2.16.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.runtime_2.9.0/lib/saf.core.runtime.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.runtime_2.9.0/lib/xmlpull-1.1.3.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.runtime_2.9.0/lib/xpp3_min-1.1.4c.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.runtime_2.9.0/lib/xstream-1.4.7.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.runtime_2.9.0/testlib/cenquatasks.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.runtime_2.9.0/testlib/jmock-1.0.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.runtime_2.9.0/testlib/jmock-cglib-1.0.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.runtime_2.9.0/testlib/junit-3.8.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.runtime_2.9.0/testlib/junit-addons-1.4.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.server_2.9.0/lib/annotations-13.0.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.server_2.9.0/lib/jackson-annotations-2.9.9.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.server_2.9.0/lib/jackson-core-2.9.9.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.server_2.9.0/lib/jackson-databind-2.9.9.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.server_2.9.0/lib/javalin-3.0.0.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.server_2.9.0/lib/javax.servlet-api-3.1.0.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.server_2.9.0/lib/jeromq-0.5.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.server_2.9.0/lib/jetty-client-9.4.17.v20190418.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.server_2.9.0/lib/jetty-http-9.4.17.v20190418.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.server_2.9.0/lib/jetty-io-9.4.17.v20190418.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.server_2.9.0/lib/jetty-security-9.4.17.v20190418.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.server_2.9.0/lib/jetty-server-9.4.17.v20190418.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.server_2.9.0/lib/jetty-servlet-9.4.17.v20190418.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.server_2.9.0/lib/jetty-util-9.4.17.v20190418.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.server_2.9.0/lib/jetty-webapp-9.4.17.v20190418.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.server_2.9.0/lib/jetty-xml-9.4.17.v20190418.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.server_2.9.0/lib/kotlin-stdlib-1.3.31.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.server_2.9.0/lib/kotlin-stdlib-common-1.3.31.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.server_2.9.0/lib/kotlin-stdlib-jdk7-1.3.31.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.server_2.9.0/lib/kotlin-stdlib-jdk8-1.3.31.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.server_2.9.0/lib/saf.core.v3d.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.server_2.9.0/lib/slf4j-api-1.7.26.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.server_2.9.0/lib/slf4j-simple-1.7.26.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.server_2.9.0/lib/websocket-api-9.4.17.v20190418.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.server_2.9.0/lib/websocket-client-9.4.17.v20190418.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.server_2.9.0/lib/websocket-common-9.4.17.v20190418.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.server_2.9.0/lib/websocket-server-9.4.17.v20190418.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.server_2.9.0/lib/websocket-servlet-9.4.17.v20190418.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.sql_2.9.0/lib/JoSQL-2.2.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.sql_2.9.0/lib/gentlyWEB-utils-1.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.visualization_2.9.0/lib/MS3DLoader-1.0.8.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.visualization_2.9.0/lib/jung-visualization-2.0.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/saf.core.ui_2.9.0/lib/TableLayout.jar"/>
+        <pathelement location="${plugins_loc}plugins/saf.core.ui_2.9.0/lib/dockingFrames-1.0.8p3a-saf.jar"/>
+        <pathelement location="${plugins_loc}plugins/saf.core.ui_2.9.0/lib/jgoodies-forms-1.7.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/saf.core.ui_2.9.0/lib/jh.jar"/>
+        <pathelement location="${plugins_loc}plugins/saf.core.ui_2.9.0/lib/l2fprod-common-all.jar"/>
+        <pathelement location="${plugins_loc}plugins/saf.core.ui_2.9.0/lib/osx.jar"/>
+        <pathelement location="${plugins_loc}plugins/saf.core.ui_2.9.0/lib/wizard-0.1.12.jar"/>
+        <pathelement location="${plugins_loc}plugins/saf.core.ui_2.9.0/saf.core.ui.jar"/>
+        <pathelement location="${plugins_loc}plugins/saf.core.ui_2.9.0/saf.core.v3d.jar"/>
+    </path>
+    <path id="build.classpath">
+        <pathelement location="bin"/>
+        <path refid="Groovy DSL Support.libraryclasspath"/>
+        <path refid="Groovy Libraries.libraryclasspath"/>
+        <path refid="Repast Simphony Development Libraries.libraryclasspath"/>
+    </path>
+    <path id="Stand Alone Batch Classpath.libraryclasspath">
+        <pathelement location="${plugins_loc}/plugins/repast.simphony.distributed.batch.ui_2.9.0/bin-standalone"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.runtime_2.9.0/lib/commons-cli-1.3.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.core_2.9.0/lib/commons-lang3-3.1.jar"/>
+    </path>
+    <path id="run.batch-model.classpath">
+        <path refid="Stand Alone Batch Classpath.libraryclasspath"/>
+        <path refid="Groovy Libraries.libraryclasspath"/>
+    </path>
+    <path id="Repast Simphony Interactive Runtime Libraries.libraryclasspath">
+        <pathelement location="${plugins_loc}plugins/org.codehaus.groovy_3.0.9.v202109301428-e2106-RELEASE/lib/groovy-3.0.9-indy.jar"/>
+        <pathelement location="${plugins_loc}plugins/org.codehaus.groovy_3.0.9.v202109301428-e2106-RELEASE/lib/groovy-test-3.0.9-indy.jar"/>
+        <pathelement location="${plugins_loc}plugins/org.codehaus.groovy_3.0.9.v202109301428-e2106-RELEASE/lib/ivy-2.5.0.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.runtime_2.9.0/bin"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.runtime_2.9.0/lib/saf.core.runtime.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.runtime_2.9.0/lib/commons-logging-1.1.2.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.runtime_2.9.0/lib/javassist-3.17.1-GA.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.runtime_2.9.0/lib/jpf.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.runtime_2.9.0/lib/jpf-boot.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.runtime_2.9.0/lib/log4j-1.2.16.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.runtime_2.9.0/lib/xpp3_min-1.1.4c.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.runtime_2.9.0/lib/xstream-1.4.7.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.runtime_2.9.0/lib/xmlpull-1.1.3.1.jar"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.runtime_2.9.0/lib/commons-cli-1.2.jar"/>
+    </path>
+    <path id="run.model.classpath">
+        <path refid="Repast Simphony Interactive Runtime Libraries.libraryclasspath"/>
+    </path>
+    <path id="run.server.classpath">
+        <path refid="Groovy Libraries.libraryclasspath"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.server_2.9.0/bin"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.core_2.9.0/bin"/>
+        <pathelement location="${plugins_loc}plugins/repast.simphony.scenario_2.9.0/bin"/>
+        <path refid="Repast Simphony Development Libraries.libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="init" name="build">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="build.classpath"/>
+        </javac>
+    </target>
+    <target name="run-batch">
+        <java classname="repast.simphony.batch.standalone.StandAloneMain" failonerror="true" fork="yes">
+            <arg line="-model_dir &quot;${workspace_loc}&quot;"/>
+            <classpath refid="run.batch-model.classpath"/>
+        </java>
+    </target>
+    <target name="run-model">
+        <java classname="repast.simphony.runtime.RepastMain" failonerror="true" fork="yes">
+            <jvmarg line="-XX:+IgnoreUnrecognizedVMOptions --add-modules=ALL-SYSTEM --add-exports=java.base/jdk.internal.ref=ALL-UNNAMED"/>
+            <arg line="&quot;${model_loc}&quot;"/>
+            <classpath refid="run.model.classpath"/>
+        </java>
+    </target>
+    <target name="debug-model">
+        <java classname="repast.simphony.runtime.RepastMain" failonerror="true" fork="yes">
+            <jvmarg line="-Xdebug -Xrunjdwp:server=y,transport=dt_socket,address=5005,suspend=n -XX:+IgnoreUnrecognizedVMOptions --add-modules=ALL-SYSTEM --add-exports=java.base/jdk.internal.ref=ALL-UNNAMED"/>
+            <arg line="&quot;${model_loc}&quot;"/>
+            <classpath refid="run.model.classpath"/>
+        </java>
+    </target>
+    <target name="run-server">
+        <java classname="repast.simphony.ws.RepastWS" failonerror="true" fork="yes">
+            <jvmarg line="-XX:+IgnoreUnrecognizedVMOptions --add-modules=ALL-SYSTEM --add-exports=java.base/jdk.internal.ref=ALL-UNNAMED"/>
+            <arg line="5000 &quot;${model_loc}&quot; true"/>
+            <classpath refid="run.server.classpath"/>
+        </java>
+    </target>
+</project>

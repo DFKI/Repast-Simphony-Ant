@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  sosad-server:
+    image: jzombies
+    container_name: jzombies-server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"

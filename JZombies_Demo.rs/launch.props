@@ -1,0 +1,6 @@
+#
+#Mon Mar 07 17:04:34 CET 2022
+incoming=tcp\://127.0.0.1\:5555
+outgoing=tcp\://127.0.0.1\:5556
+scenario=../JZombies_Demo.rs
+working.directory=../
